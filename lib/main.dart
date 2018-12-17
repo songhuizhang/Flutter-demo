@@ -1,35 +1,46 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main ()=> runApp(myApp());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class myApp extends StatelessWidget{
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
-      title: 'Hello Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Hello'),
+      title: 'viewList',
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('ViewList'),
         ),
-        body: Center(
-          child: Container(
-            child: new Image.network(
-              'https://avatars2.githubusercontent.com/u/21076725?s=460&v=4',
-              color: Colors.orange,
-              colorBlendMode: BlendMode.color,
-              repeat: ImageRepeat.repeatY,
+        body: new ListView(
+          children: <Widget>[
+            new ListTile(
+              leading: new Icon(Icons.access_alarm),
+              title: new Text('access_alarm'),
             ),
-            width: 500.0,
-            height: 500.0,
-            color: Colors.lightBlue,
-          )
+            new ListTile(
+              leading: new Icon(Icons.access_time),
+              title: new Text('access_time'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.adb),
+              title: new Text('adb'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.book),
+              title: new Text('book'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.brightness_3),
+              title: new Container(
+                child: new Image.network('https://avatars2.githubusercontent.com/u/21076725?s=460&v=4'),
+                width: 40.0,
+                height: 35.0,
+                alignment: Alignment.topLeft,
+              ),
+            )
+          ],
         ),
       ),
     );
   }
 }
-
