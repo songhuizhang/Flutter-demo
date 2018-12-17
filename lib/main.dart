@@ -28,9 +28,20 @@ class MyApp extends StatelessWidget {
               ),
             ),
             alignment: Alignment.center,
-            width: 300.0,
-            height: 300.0,
-            color: Colors.lightBlue,
+            width: 500.0,
+            height: 500.0,
+            // color: Colors.lightBlue,
+            padding: const EdgeInsets.fromLTRB(20.0, 40.0, 30, 0),
+            margin: const EdgeInsets.all(10),
+            decoration: new BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [Colors.lightBlue,Colors.white,Colors.pink]
+              ),
+              border: Border.all(
+                width: 5.0,
+                color: Colors.grey
+              )
+            ),
           )
         ),
       ),
