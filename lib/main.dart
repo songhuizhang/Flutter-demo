@@ -16,17 +16,22 @@ class MyApp extends StatelessWidget {
           title: Text('Hello'),
         ),
         body: Center(
-          child: Text(
-            'Hello World,这句话好长啊啊啊啊啊啊啊啊啊！！！！！！！！！！！！！',
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
-            style: TextStyle(
-              fontSize: 25.0,
-              fontWeight: FontWeight.w500,
-              color: Colors.green,
-              decoration: TextDecoration.underline
+          child: Container(
+            child: new Text(
+              '这个是容器，相当于前端的div',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24.0,
+                fontWeight: FontWeight.w500,
+                decoration: TextDecoration.underline
+              ),
             ),
-          ),
+            alignment: Alignment.center,
+            width: 300.0,
+            height: 300.0,
+            color: Colors.lightBlue,
+          )
         ),
       ),
     );
