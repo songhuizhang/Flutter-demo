@@ -1,52 +1,23 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() =>
+    runApp(MyApp(items: List<String>.generate(100, (i) => "this is $i")));
 
 class MyApp extends StatelessWidget {
+  final List<String> items;
+  MyApp({Key key, @required this.items}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'viewList',
       home: new Scaffold(
-          appBar: new AppBar(
-            title: new Text('ViewList'),
-          ),
-          body: Container(height: 200, child: MyList())),
-    );
-  }
-}
-
-class MyList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      children: <Widget>[
-        Container(
-          width: 100,
-          color: Colors.green,
-        ),
-        Container(
-          width: 100,
-          color: Colors.red,
-        ),
-        Container(
-          width: 100,
-          color: Colors.pink,
-        ),
-        Container(
-          width: 100,
-          color: Colors.grey,
-        ),
-        Container(
-          width: 100,
-          color: Colors.lightBlue,
-        ),
-        Container(
-          width: 100,
-          color: Colors.cyan,
-        ),
-      ],
+          body: new ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                return new ListTile(
+                  title: Text('${items[index]}'),
+                );
+              })),
     );
   }
 }
