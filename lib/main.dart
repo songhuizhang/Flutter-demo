@@ -67,6 +67,16 @@ class Home extends StatelessWidget {
             Icon(Icons.blur_circular, size: 130.0, color: Colors.black12),
           ],
         ),
+        drawer: Container(
+          color: Colors.white,
+          padding: EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('这是抽屉')
+            ],
+          ),
+        ),
       ),
     );
   }
