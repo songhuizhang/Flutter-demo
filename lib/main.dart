@@ -22,12 +22,12 @@ class Home extends StatelessWidget {
       margin: EdgeInsets.all(8.0),
       child: Column(
         children: <Widget>[
-          Image.network(posts[index].url,),
+          Image.network(posts[index].url,width: 400,fit: BoxFit.cover,),
           SizedBox(
             height: 16.0,
           ),
           Text(posts[index].name, style: Theme.of(context).textTheme.title),
-          Text(posts[index].rate, style: Theme.of(context).textTheme.subhead),
+          Text('评分：' + posts[index].rate, style: Theme.of(context).textTheme.subhead),
           SizedBox(
             height: 16.0,
           )
