@@ -27,11 +27,6 @@ class Home extends StatelessWidget {
       child: Scaffold(
           backgroundColor: Colors.grey[100],
           appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(Icons.menu),
-              tooltip: '菜单',
-              onPressed: () => debugPrint('点击了菜单按钮'),
-            ),
             title: Text('橙汁菌'),
             actions: <Widget>[
               IconButton(
@@ -70,8 +65,12 @@ class Home extends StatelessWidget {
             child: ListView(
               padding: EdgeInsets.zero,
               children: <Widget>[
-                DrawerHeader(
-                  decoration: BoxDecoration(color: Colors.pink),
+                UserAccountsDrawerHeader(
+                  accountName: Text('橙汁菌'),
+                  accountEmail: Text('songhui25262@gmail.com'),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundImage: NetworkImage('https://avatars2.githubusercontent.com/u/21076725?s=460&v=4'),
+                  ),
                 ),
                 ListTile(
                   title: Text(
@@ -79,6 +78,7 @@ class Home extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
                   leading: Icon(Icons.home),
+                  onTap: () => Navigator.pop(context),
                 ),
                 ListTile(
                   title: Text(
@@ -86,6 +86,7 @@ class Home extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
                   leading: Icon(Icons.archive),
+                  onTap: () => Navigator.pop(context),
                 ),
                 ListTile(
                   title: Text(
@@ -93,6 +94,7 @@ class Home extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
                   leading: Icon(Icons.category),
+                  onTap: () => Navigator.pop(context),
                 ),
                 ListTile(
                   title: Text(
@@ -100,13 +102,15 @@ class Home extends StatelessWidget {
                     textAlign: TextAlign.left,
                   ),
                   leading: Icon(Icons.filter_b_and_w),
+                  onTap: () => Navigator.pop(context),
                 ),
-                 ListTile(
+                ListTile(
                   title: Text(
                     '设置',
                     textAlign: TextAlign.left,
                   ),
                   leading: Icon(Icons.settings),
+                  onTap: () => Navigator.pop(context),
                 ),
               ],
             ),
